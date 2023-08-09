@@ -1,4 +1,5 @@
-const stepNumbersArray = [1, 2, 3, 4];
+import { FORM_STEPS } from "./constants";
+
 
 interface StepsNumbersProps {
     currentStep: number;
@@ -13,22 +14,22 @@ const StepsNumbers = ({ currentStep, setCurrentStep }: StepsNumbersProps) => {
 
     return (
         <div className="flex gap-5">
-            {stepNumbersArray.map((stepNumber) => (
+            {FORM_STEPS.map((stepNumber) => (
                 <button
                     onClick={handleStepChange}
                     className={`${
-                        currentStep == stepNumber
+                        currentStep == Number(stepNumber.label)
                             ? "bg-magnolia"
                             : "bg-transparent"
                     } flex-1 w-8 h-8 ${
-                        currentStep == stepNumber
+                        currentStep == Number(stepNumber.label)
                             ? "text-black"
                             : "text-slate-50"
                     } text-slate-50 border border-white rounded-full flex justify-center items-center`}
-                    key={stepNumber}
+                    key={stepNumber.label}
                     id={`${stepNumber}`}
                 >
-                    <div>{stepNumber}</div>
+                    <div>{stepNumber.label}</div>
                 </button>
             ))}
         </div>

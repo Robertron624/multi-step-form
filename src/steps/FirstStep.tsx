@@ -1,3 +1,4 @@
+
 const FirstStep = () => {
   return (
     <div className="w-[90%] shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">

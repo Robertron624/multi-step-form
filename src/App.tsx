@@ -23,6 +23,7 @@ function pickStepComponent(step: number) {
     }
 }
 
+
 function App() {
     const [currentStep, setCurrentStep] = useState<number>(1);
 
@@ -39,18 +40,21 @@ function App() {
                 </section>
             </main>
             <footer className="bg-white w-full py-3">
-              <div className={`${currentStep == 1 ? 'justify-end': 'justify-between'} flex w-[90%] mx-auto`}>
+                <div
+                    className={`${
+                        currentStep == 1 ? "justify-end" : "justify-between"
+                    } flex w-[90%] mx-auto`}
+                >
+                    {currentStep != 1 && (
+                        <button className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 rounded-md">
+                            Go Back
+                        </button>
+                    )}
 
-                {currentStep != 1 && (
-                  <button className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 rounded-md">
-                    Go Back
-                  </button>
-                )}
-
-                <button className="bg-marine-blue text-light-gray font-bold py-2 px-4 rounded-md">
-                    Next Step
-                </button>
-              </div>
+                    <button className="bg-marine-blue text-light-gray font-bold py-2 px-4 rounded-md">
+                        Next Step
+                    </button>
+                </div>
             </footer>
         </div>
     );
