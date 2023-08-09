@@ -77,8 +77,9 @@ body {
   line-height: 1.5;
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
+
+  background-color: hsl(215, 100%, 97%);
 }
 
 /* A elements that don't have a class get default styles */
