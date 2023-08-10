@@ -7,7 +7,7 @@ const Footer = () => {
     const currentStep = Number(location.pathname.split("/")[1]) + 1;
 
     return (
-        <footer className="bg-white w-full py-3">
+        <div className="bg-white w-full py-3">
             <div
                 className={`${
                     currentStep == 1 ? "justify-end" : "justify-between"
@@ -19,11 +19,11 @@ const Footer = () => {
                     </button>
                 )}
 
-                <button className="bg-marine-blue text-light-gray font-bold py-2 px-4 rounded-md">
+                <button type="submit" className="bg-marine-blue text-light-gray font-bold py-2 px-4 rounded-md">
                     Next Step
                 </button>
             </div>
-        </footer>
+        </div>
     );
 };
 

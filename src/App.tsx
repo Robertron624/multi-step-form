@@ -7,11 +7,11 @@ import FirstStep from "./steps/FirstStep";
 import SecondStep from "./steps/SecondStep";
 import ThirdStep from "./steps/ThirdStep";
 import FourthStep from "./steps/FourthStep";
-import Footer from "./components/Footer";
 
 import { AppProvider } from "./state";
 
 function App() {
+
     return (
         <div className="App h-full flex flex-col justify-between">
             <AppProvider>
@@ -25,7 +25,6 @@ function App() {
                             <Route path="/fourth" element={<FourthStep />} />
                         </Routes>
                     </main>
-                    <Footer />
                 </Router>
             </AppProvider>
         </div>
