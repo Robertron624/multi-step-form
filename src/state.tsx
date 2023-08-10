@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const AppStateContext = createContext({});
 
@@ -7,19 +7,13 @@ interface AppStateProviderProps {
 }
 
 export function AppProvider({ children }: AppStateProviderProps) {
-    const value = useState({});
+    // value is an array with two elements: [state, setState]
+
+    const value = useState({})
 
     return (
         <AppStateContext.Provider value={value}>
             {children}
         </AppStateContext.Provider>
     );
-}
-
-export function useAppState() {
-    const context = useContext(AppStateContext);
-    if (context === undefined) {
-        throw new Error("useAppState must be used within the AppStateProvider");
-    }
-    return context;
 }
