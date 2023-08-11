@@ -45,3 +45,43 @@ export const PLANS = [
         iconUrl: "/icon-pro.svg"
     },
 ];
+
+export type Addon = {
+    id: string;
+    name: string;
+    price: {
+        monthly: number;
+        yearly: number;
+    };
+    feature: string;
+};
+
+export const ADDONS = [
+    {
+        id: "online-service",
+        name: "Online Service",
+        price: {
+            monthly: 1,
+            yearly: 10,
+        },
+        feature: "Access to multiplayer games",
+    },
+    {
+        id: "large-storage",
+        name: "Large Storage",
+        price: {
+            monthly: 2,
+            yearly: 20,
+        },
+        feature: "Extra 1TB of cloud save",
+    },
+    {
+        id: "customizable-profile",
+        name: "Customizable Profile",
+        price: {
+            monthly: 2,
+            yearly: 20,
+        },
+        feature: "Custom theme on your profile",
+    },
+]
