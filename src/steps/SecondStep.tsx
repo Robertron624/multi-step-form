@@ -8,7 +8,13 @@ import { useState } from "react";
 const SecondStep = () => {
     const [state, setState] = useAppState();
 
-    const [selectedPlan, setSelectedPlan] = useState<string>("arcade");
+    const [selectedPlan, setSelectedPlan] = useState<
+        "arcade" | "advanced" | "pro"
+    >("arcade");
+
+    const [selectedPeriod, setSelectedPeriod] = useState<"yearly" | "monthly">(
+        "monthly"
+    );
 
     const { handleSubmit, register } = useForm({
         defaultValues: state,
@@ -34,14 +40,32 @@ const SecondStep = () => {
         e: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
         const planId = e.currentTarget.id;
-        setSelectedPlan(planId);
+        setSelectedPlan(planId as "arcade" | "advanced" | "pro");
+    };
+
+    const handlePeriodChange = (
+        e: React.MouseEvent<HTMLDivElement, MouseEvent>
+    ) => {
+        const period = e.currentTarget.id;
+
+        // Check if function is called from the switcher
+        if (period === "switcher") {
+            if (selectedPeriod === "monthly") {
+                setSelectedPeriod("yearly");
+            } else {
+                setSelectedPeriod("monthly");
+            }
+            return;
+        }
+
+        setSelectedPeriod(period as "yearly" | "monthly");
     };
 
     return (
         <div className="">
             <form onSubmit={handleSubmit(saveData)} action="" method="POST">
                 <fieldset className="flex flex-col justify-between h-[84vh]">
-                    <div className="w-[90%] shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
+                    <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
                         <legend className="font-bold text-xl mb-2">
                             Select your plan
                         </legend>
@@ -50,7 +74,13 @@ const SecondStep = () => {
                         </p>
                         <div className="flex flex-col gap-4">
                             {PLANS.map((plan) => {
-                                const { id, name, price, iconUrl } = plan;
+                                const {
+                                    id,
+                                    name,
+                                    price,
+                                    iconUrl,
+                                    yearlyDiscount,
+                                } = plan;
 
                                 return (
                                     <div
@@ -61,7 +91,7 @@ const SecondStep = () => {
                                             id === selectedPlan
                                                 ? "border-purplish-blue "
                                                 : "border-light-gray"
-                                        } rounded-md`}
+                                        } rounded-md items-center`}
                                     >
                                         <img src={iconUrl} alt={`${id} icon`} />
                                         <div>
@@ -70,13 +100,44 @@ const SecondStep = () => {
                                                     {name}
                                                 </label>{" "}
                                                 <span className="text-cool-gray">
-                                                    ${price.monthly}/mo
+                                                    {`${
+                                                        selectedPeriod ===
+                                                        "monthly"
+                                                            ? `$${price.monthly}/mo`
+                                                            : `$${price.yearly}/yr`
+                                                    }`}
                                                 </span>
+                                                {selectedPeriod == "yearly" ? (
+                                                    <span className="text-marine-blue font-semibold text-xs">
+                                                        {yearlyDiscount}
+                                                    </span>
+                                                ) : null}
                                             </p>
                                         </div>
                                     </div>
                                 );
                             })}
+                        </div>
+                        <div className="period-switcher bg-magnolia rounded-md mt-4 py-2 px-4 flex justify-center gap-3 items-center">
+                            <div
+                                id="monthly"
+                                onClick={handlePeriodChange}
+                                className={` font-bold text-sm text-marine-blue"`}
+                            >
+                                Monthly
+                            </div>
+                            <div
+                                className={`bg-marine-blue w-9 h-4 px-1 rounded-lg relative flex items-center ${selectedPeriod == "yearly" ? "justify-end" : "" }`}
+                            >
+                                <span onClick={handlePeriodChange} id="switcher" className={`w-[.65rem] h-[.65rem] inline bg-magnolia rounded-full transition-all duration-200 `}></span>
+                            </div>
+                            <div
+                                id="yearly"
+                                onClick={handlePeriodChange}
+                                className={` font-bold text-sm text-cool-gray`}
+                            >
+                                Yearly
+                            </div>
                         </div>
                     </div>
                     <Footer />

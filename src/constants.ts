@@ -18,9 +18,10 @@ export const PLANS = [
         id: "arcade",
         name: "Arcade",
         price: {
-            monthly: 99,
-            yearly: 490,
+            monthly: 9,
+            yearly: 90,
         },
+        yearlyDiscount: "2 months free",
         iconUrl: "/icon-arcade.svg"
     },
     {
@@ -28,8 +29,9 @@ export const PLANS = [
         name: "Advanced",
         price: {
             monthly: 12,
-            yearly: 990,
+            yearly: 120,
         },
+        yearlyDiscount: "2 months free",
         iconUrl: "/icon-advanced.svg"
     },
     {
@@ -37,8 +39,9 @@ export const PLANS = [
         name: "Pro",
         price: {
             monthly: 15,
-            yearly: 222,
+            yearly: 150,
         },
+        yearlyDiscount: "2 months free",
         iconUrl: "/icon-pro.svg"
     },
 ];
