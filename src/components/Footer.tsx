@@ -1,20 +1,48 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
 
     const location = useLocation();
+    const navigate = useNavigate();
 
-    const currentStep = Number(location.pathname.split("/")[1]) + 1;
+    type BackMap = {
+        [key: string]: string;
+    }
+    type StepsMap = {
+        [key: string]: string;
+    }
+
+    const backMap: BackMap = {
+        "/second": "/",
+        "/third": "/second",
+        "/fourth": "/third",
+    }
+
+    const stepsMap: StepsMap = {
+        "/": "1",
+        "/second": "2",
+        "/third": "3",
+        "/fourth": "4",
+    }
+
+    const currentStep: string | undefined = stepsMap[location.pathname];
+
+    const prevStep: string | undefined = backMap[location.pathname];
+
+    const handleBackRedirect = () => {
+        navigate(prevStep);
+    }
+        
 
     return (
         <div className="bg-white w-full py-3">
             <div
                 className={`${
-                    currentStep == 1 ? "justify-end" : "justify-between"
+                    currentStep == "/" ? "justify-end" : "justify-between"
                 } flex w-[90%] mx-auto`}
             >
-                {currentStep != 1 && (
-                    <button className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 rounded-md">
+                {currentStep != "/" && (
+                    <button onClick={handleBackRedirect} className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 rounded-md">
                         Go Back
                     </button>
                 )}

@@ -1,6 +1,6 @@
 const ThirdStep = () => {
     return (
-      <div>SecondStep</div>
+      <div>Third Step</div>
     )
   }
   
