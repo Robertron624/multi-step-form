@@ -1,9 +1,10 @@
 import Footer from "../components/Footer";
 import { useAppState } from "../state";
-import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { PLANS } from "../constants";
 import { useState } from "react";
+
+import "./SecondStep.css";
 
 const SecondStep = () => {
     const [state, setState] = useAppState();
@@ -16,11 +17,6 @@ const SecondStep = () => {
         "monthly"
     );
 
-    const { handleSubmit, register } = useForm({
-        defaultValues: state,
-        mode: "onSubmit",
-    });
-
     const navigate = useNavigate();
 
     interface FormData {
@@ -28,7 +24,12 @@ const SecondStep = () => {
         period: "yearly" | "monthly";
     }
 
-    const saveData = (data: Partial<FormData>) => {
+    const handleSubmit = () => {
+        const data: FormData = {
+            plan: selectedPlan,
+            period: selectedPeriod,
+        };
+
         setState({
             ...state,
             ...data,
@@ -47,23 +48,22 @@ const SecondStep = () => {
         e: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
         const period = e.currentTarget.id;
-
-        // Check if function is called from the switcher
-        if (period === "switcher") {
-            if (selectedPeriod === "monthly") {
-                setSelectedPeriod("yearly");
-            } else {
-                setSelectedPeriod("monthly");
-            }
-            return;
-        }
-
         setSelectedPeriod(period as "yearly" | "monthly");
+    };
+
+    const handlePeriodChangeCheckbox = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        if (e.target.checked) {
+            setSelectedPeriod("yearly");
+        } else {
+            setSelectedPeriod("monthly");
+        }
     };
 
     return (
         <div className="">
-            <form onSubmit={handleSubmit(saveData)} action="" method="POST">
+            <form onSubmit={handleSubmit} action="" method="POST">
                 <fieldset className="flex flex-col justify-between h-[84vh]">
                     <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
                         <legend className="font-bold text-xl mb-2">
@@ -126,11 +126,19 @@ const SecondStep = () => {
                             >
                                 Monthly
                             </div>
-                            <div
-                                className={`bg-marine-blue w-9 h-4 px-1 rounded-lg relative flex items-center ${selectedPeriod == "yearly" ? "justify-end" : "" }`}
-                            >
-                                <span onClick={handlePeriodChange} id="switcher" className={`w-[.65rem] h-[.65rem] inline bg-magnolia rounded-full transition-all duration-200 `}></span>
+
+                            <div className="cl-toggle-switch flex">
+                                <label className="cl-switch">
+                                    <input
+                                        onChange={handlePeriodChangeCheckbox}
+                                        id="switcher"
+                                        type="checkbox"
+                                        checked={selectedPeriod === "yearly"}
+                                    />
+                                    <span></span>
+                                </label>
                             </div>
+
                             <div
                                 id="yearly"
                                 onClick={handlePeriodChange}
