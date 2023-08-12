@@ -1,14 +1,14 @@
 import React, { createContext, useState } from "react";
 import { Addon } from "./constants";
-
+import { Plan } from "./constants";
 interface AppState {
     name?: string;
     email?: string;
     phone?: string;
 
     // Second step
-    plan?: "arcade" | "advanced" | "pro";
-    period?: "yearly" | "monthly";
+    plan: Plan;
+    period: "yearly" | "monthly";
     addons?: Addon[];
 }
 
@@ -18,6 +18,17 @@ interface AppStateProviderProps {
     children: React.ReactNode;
 }
 
+const defaultPlan: Plan  =     {
+    id: "arcade",
+    name: "Arcade",
+    price: {
+        monthly: 9,
+        yearly: 90,
+    },
+    yearlyDiscount: "2 months free",
+    iconUrl: "/icon-arcade.svg"
+}
+
 export function AppProvider({ children }: AppStateProviderProps) {
     // value is an array with two elements: [state, setState]
 
@@ -25,8 +36,8 @@ export function AppProvider({ children }: AppStateProviderProps) {
         name: "", 
         email: "", 
         phone: "",
-        plan: undefined,
-        period: undefined,
+        plan: defaultPlan,
+        period: "monthly",
         addons: [],
     });
 

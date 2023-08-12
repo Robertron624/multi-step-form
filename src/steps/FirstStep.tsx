@@ -78,6 +78,9 @@ const FirstStep = () => {
                                 placeholder="e.g. stephenking@lorem.com"
                                 {...register("email", {
                                     required: "Email is required",
+                                    validate: (value) =>
+                                        value?.includes("@") ||
+                                        "Email must include @",
                                 })}
                             />
                             {errors.email && (

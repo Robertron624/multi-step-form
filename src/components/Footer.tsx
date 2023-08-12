@@ -29,6 +29,8 @@ const Footer = () => {
 
     const prevStep: string | undefined = backMap[location.pathname];
 
+    
+
     const handleBackRedirect = () => {
         navigate(prevStep);
     }
@@ -47,8 +49,8 @@ const Footer = () => {
                     </button>
                 )}
 
-                <button type="submit" className="bg-marine-blue text-light-gray font-bold py-2 px-4 rounded-md">
-                    Next Step
+                <button type="submit" className={`${currentStep == "4" ? "bg-purplish-blue" : "bg-marine-blue"} text-alabaster font-bold py-2 px-4 rounded-md`}>
+                    {currentStep == "4" ? "Confirm" : "Next Step"}
                 </button>
             </div>
         </div>

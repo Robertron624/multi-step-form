@@ -13,7 +13,18 @@ export const FORM_STEPS = [
     },
 ];
 
-export const PLANS = [
+export interface Plan {
+    id: string;
+    name: string;
+    price: {
+        monthly: number;
+        yearly: number;
+    };
+    yearlyDiscount: string;
+    iconUrl: string;
+}
+
+export const PLANS: Plan[] = [
     {
         id: "arcade",
         name: "Arcade",
@@ -67,8 +78,8 @@ export const ADDONS = [
         feature: "Access to multiplayer games",
     },
     {
-        id: "large-storage",
-        name: "Large Storage",
+        id: "larger-storage",
+        name: "Larger Storage",
         price: {
             monthly: 2,
             yearly: 20,

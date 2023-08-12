@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import { useAppState } from "../state";
 import { useNavigate } from "react-router-dom";
-import { PLANS } from "../constants";
+import { PLANS, Plan as PlanType } from "../constants";
 import { useState } from "react";
 
 import "./SecondStep.css";
@@ -20,13 +20,13 @@ const SecondStep = () => {
     const navigate = useNavigate();
 
     interface FormData {
-        plan: "arcade" | "advanced" | "pro";
+        plan: PlanType;
         period: "yearly" | "monthly";
     }
 
     const handleSubmit = () => {
         const data: FormData = {
-            plan: selectedPlan,
+            plan: PLANS.find((plan) => plan.id === selectedPlan)!,
             period: selectedPeriod,
         };
 
