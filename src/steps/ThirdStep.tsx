@@ -36,7 +36,19 @@ const ThirdStep = () => {
         }
     };
 
-    const handleSubmit = () => {};
+    const handleSubmit = () => {
+
+        const data = {
+            addons: selectedAddons,
+        };
+
+        setState({
+            ...state,
+            ...data,
+        });
+        navigate("/fourth");
+
+    };
 
     return (
         <div className="">
@@ -61,12 +73,13 @@ const ThirdStep = () => {
                                         key={id}
                                         className={`flex px-4 py-2 gap-3 border ${
                                             isAddonOnList
-                                                ? "border-purplish-blue "
+                                                ? "border-purplish-blue bg-magnolia"
                                                 : "border-light-gray"
                                         } rounded-md items-center`}
                                     >
                                         <input
                                             type="checkbox"
+                                            className="w-4 h-4"
                                             id={id}
                                             name={id}
                                             checked={isAddonOnList}
@@ -78,11 +91,11 @@ const ThirdStep = () => {
                                                     {name}
                                                 </label>{" "}
                                                 <span className="text-cool-gray text-xs">
-                                                    {`$${feature}`}
+                                                    {`${feature}`}
                                                 </span>
                                             </div>
                                             <div className="text-purplish-blue  text-xs">
-                                                {`$${
+                                                {`+$${
                                                     period === "monthly"
                                                         ? price.monthly
                                                         : price.yearly

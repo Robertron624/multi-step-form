@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { Addon } from "./constants";
 
 interface AppState {
     name?: string;
@@ -8,7 +9,7 @@ interface AppState {
     // Second step
     plan?: "arcade" | "advanced" | "pro";
     period?: "yearly" | "monthly";
-    addons?: string[];
+    addons?: Addon[];
 }
 
 export const AppStateContext = createContext({} as [AppState, React.Dispatch<React.SetStateAction<AppState>>]);
