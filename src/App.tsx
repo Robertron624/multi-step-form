@@ -9,6 +9,7 @@ import ThirdStep from "./steps/ThirdStep";
 import FourthStep from "./steps/FourthStep";
 
 import { AppProvider } from "./state";
+import Fifth from "./steps/Fifth";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                             <Route path="/second" element={<SecondStep />} />
                             <Route path="/third" element={<ThirdStep />} />
                             <Route path="/fourth" element={<FourthStep />} />
+                            <Route path="/fifth" element={<Fifth />} />
                         </Routes>
                     </main>
                 </Router>
