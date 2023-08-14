@@ -15,9 +15,13 @@ const StepsNumbers = () => {
         "/fifth": "4",
     };
 
-    const reversedStepsMap: StepsMap = Object.fromEntries(
-        Object.entries(stepsMap).map(([key, value]) => [value, key])
-    );
+    // Map to navigate to the correct step, user cannot manually go to thank you page
+    const navigateMap: StepsMap = {
+        "1": "/",
+        "2": "/second",
+        "3": "/third",
+        "4": "/fourth",
+    }
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -31,7 +35,8 @@ const StepsNumbers = () => {
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
         const step = e.currentTarget.id;
-        const path = reversedStepsMap[step];
+
+        const path = navigateMap[step];
 
         const { name, email, phone } = state;
 
@@ -48,8 +53,8 @@ const StepsNumbers = () => {
     };
 
     return (
-        <div className="w-full h-40 bg-no-repeat bg-steps-pattern-mobile md:bg-steps-pattern-desktop">
-            <div className="flex gap-5 max-w-[12rem] mx-auto py-8 ">
+        <div className="w-full md:max-w-[17rem] h-40 md:h-full bg-no-repeat bg-steps-pattern-mobile md:bg-steps-pattern-desktop">
+            <div className="flex md:flex-col gap-5 max-w-[12rem] md:max-w-none items-center mx-auto py-8 ">
                 {FORM_STEPS.map((stepNumber) => (
                     <button
                         onClick={handleChangeStep}
@@ -57,7 +62,7 @@ const StepsNumbers = () => {
                             currentStep == stepNumber.label
                                 ? "bg-magnolia opacity-90 text-black"
                                 : "bg-transparent text-slate-50"
-                        } flex-1 font-semibold w-8 h-8  border border-white rounded-full flex justify-center items-center`}
+                        } font-semibold w-8 h-8  border border-white rounded-full flex justify-center items-center`}
                         key={stepNumber.label}
                         id={`${stepNumber.label}`}
                     >
