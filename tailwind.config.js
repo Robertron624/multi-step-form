@@ -19,6 +19,10 @@ export default {
       },
       fontFamily: {
         'ubuntu': ['Ubuntu', 'sans-serif'],
+      },
+      backgroundImage: {
+        "steps-pattern-mobile": "url(/bg-sidebar-mobile.svg)",
+        "steps-pattern-desktop": "url(/bg-sidebar-desktop.svg)",
       }
     },
   },

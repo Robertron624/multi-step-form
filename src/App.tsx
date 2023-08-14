@@ -18,14 +18,16 @@ function App() {
             <AppProvider>
                 <Router>
                     <main>
-                        <StepsNumbers />
-                        <Routes>
-                            <Route path="/" element={<FirstStep />} />
-                            <Route path="/second" element={<SecondStep />} />
-                            <Route path="/third" element={<ThirdStep />} />
-                            <Route path="/fourth" element={<FourthStep />} />
-                            <Route path="/fifth" element={<Fifth />} />
-                        </Routes>
+                        <div className="container relative">
+                            <StepsNumbers />
+                            <Routes>
+                                <Route path="/" element={<FirstStep />} />
+                                <Route path="/second" element={<SecondStep />} />
+                                <Route path="/third" element={<ThirdStep />} />
+                                <Route path="/fourth" element={<FourthStep />} />
+                                <Route path="/fifth" element={<Fifth />} />
+                            </Routes>
+                        </div>
                     </main>
                 </Router>
             </AppProvider>

@@ -21,7 +21,7 @@ const FourthStep = () => {
     };
 
     return (
-        <div className="">
+        <div className="absolute top-24 w-full">
             <div>
                 <fieldset className="flex flex-col justify-between h-[84vh]">
                     <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">

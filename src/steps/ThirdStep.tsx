@@ -51,7 +51,7 @@ const ThirdStep = () => {
     };
 
     return (
-        <div className="">
+        <div className="absolute top-24">
             <form onSubmit={handleSubmit} action="" method="POST">
                 <fieldset className="flex flex-col justify-between h-[84vh]">
                     <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
