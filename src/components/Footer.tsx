@@ -4,14 +4,11 @@ const Footer = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    type BackMap = {
-        [key: string]: string;
-    };
     type StepsMap = {
         [key: string]: string;
     };
 
-    const backMap: BackMap = {
+    const backMap: StepsMap = {
         "/second": "/",
         "/third": "/second",
         "/fourth": "/third",

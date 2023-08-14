@@ -1,15 +1,19 @@
 export const FORM_STEPS = [
     {
         label: "1",
+        href: "/",
     },
     {
         label: "2",
+        href: "/second",
     },
     {
         label: "3",
+        href: "/third",
     },
     {
         label: "4",
+        href: "/fourth",
     },
 ];
 

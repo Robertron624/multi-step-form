@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import { useAppState } from "../state";
 
 const FourthStep = () => {
 
     const [state] = useAppState();
+
+    const navigate = useNavigate();
 
     const { period, plan, addons } = state;
 
@@ -12,6 +15,10 @@ const FourthStep = () => {
     }, 0);
 
     const total = totalAddonsAmount ? totalAddonsAmount + plan?.price[period] : plan?.price[period];
+
+    const handleChangePlan = () => {
+        navigate("/second");
+    };
 
     return (
         <div className="">
@@ -30,12 +37,12 @@ const FourthStep = () => {
                                     <span className="font-bold text-sm text-marine-blue">
                                         {plan?.name}
                                     </span>
-                                    <a
-                                        href="/third"
+                                    <button
+                                        onClick={handleChangePlan}
                                         className="text-cool-gray underline text-sm"
                                     >
                                         Change
-                                    </a>
+                                    </button>
                                 </p>
                                 <p className="font-bold text-marine-blue">
                                     ${plan?.price[period]}
