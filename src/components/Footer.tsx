@@ -33,7 +33,7 @@ const Footer = () => {
     const isLastStep = currentStep == "4";
 
     return (
-        <div className="bg-white w-full py-3 md:mt-16">
+        <div className="bg-white w-full py-3">
             <div
                 className={`${
                     istFirstStep ? "justify-end" : "justify-between"

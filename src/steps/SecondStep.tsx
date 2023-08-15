@@ -38,7 +38,7 @@ const SecondStep = () => {
     };
 
     const handleSelectPlan = (
-        e: React.MouseEvent<HTMLDivElement, MouseEvent>
+        e:  React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
         const planId = e.currentTarget.id;
         setSelectedPlan(planId as "arcade" | "advanced" | "pro");
@@ -62,9 +62,9 @@ const SecondStep = () => {
     };
 
     return (
-        <div className="absolute md:py-4 md:px-16 md:relative top-24 md:top-0">
+        <div className="absolute md:py-4 md:px-20 md:relative top-24 md:top-0">
             <form onSubmit={handleSubmit} action="" method="POST">
-                <fieldset className="flex flex-col justify-between h-[84vh]">
+                <fieldset className="flex flex-col justify-between h-[84vh] md:h-[75vh]">
                     <div className="w-[90%] md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
                         <legend className="font-bold text-xl md:text-4xl mb-2">
                             Select your plan
@@ -83,15 +83,16 @@ const SecondStep = () => {
                                 } = plan;
 
                                 return (
-                                    <div
+                                    <button
+                                    type="button"
                                         onClick={handleSelectPlan}
                                         key={id}
                                         id={id}
-                                        className={`flex px-4 py-2 gap-3 md:flex-col border ${
+                                        className={`text-left flex px-4 py-2 gap-3 md:flex-col md:justify-between md:items-start border ${
                                             id === selectedPlan
-                                                ? "border-purplish-blue "
+                                                ? "border-purplish-blue bg-magnolia"
                                                 : "border-light-gray"
-                                        } rounded-md items-center`}
+                                        } rounded-md items-center md:w-32 md:h-36`}
                                     >
                                         <img src={iconUrl} alt={`${id} icon`} />
                                         <div>
@@ -99,7 +100,7 @@ const SecondStep = () => {
                                                 <label className="font-bold">
                                                     {name}
                                                 </label>{" "}
-                                                <span className="text-cool-gray">
+                                                <span className="text-cool-gray text-xs">
                                                     {`${
                                                         selectedPeriod ===
                                                         "monthly"
@@ -114,11 +115,11 @@ const SecondStep = () => {
                                                 ) : null}
                                             </p>
                                         </div>
-                                    </div>
+                                    </button>
                                 );
                             })}
                         </div>
-                        <div className="period-switcher bg-magnolia rounded-md mt-4 py-2 px-4 flex justify-center gap-3 items-center">
+                        <div className="period-switcher bg-magnolia rounded-md mt-4 md:mt-8 py-2 px-4 flex justify-center gap-3 md:gap-6 items-center">
                             <div
                                 id="monthly"
                                 onClick={handlePeriodChange}
