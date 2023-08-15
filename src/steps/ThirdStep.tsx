@@ -51,11 +51,11 @@ const ThirdStep = () => {
     };
 
     return (
-        <div className="absolute top-24">
+        <div className="absolute md:py-4 md:px-28 md:relative top-24 md:top-0">
             <form onSubmit={handleSubmit} action="" method="POST">
-                <fieldset className="flex flex-col justify-between h-[84vh]">
-                    <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
-                        <legend className="font-bold text-xl mb-2">
+                <fieldset className="flex flex-col justify-between h-[84vh] md:h-[75vh]">
+                    <div className="w-[90%] md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md md:px-0 px-4 py-7 text-left">
+                        <legend className="font-bold text-xl md:text-4xl mb-2">
                             Pick add-ons
                         </legend>
                         <p className="text-cool-gray text-base mb-6">
@@ -71,7 +71,7 @@ const ThirdStep = () => {
                                 return (
                                     <div
                                         key={id}
-                                        className={`flex px-4 py-2 gap-3 border ${
+                                        className={`flex px-4 md:w-[25rem] py-2 gap-3 border ${
                                             isAddonOnList
                                                 ? "border-purplish-blue bg-magnolia"
                                                 : "border-light-gray"

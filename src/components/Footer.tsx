@@ -37,12 +37,12 @@ const Footer = () => {
             <div
                 className={`${
                     istFirstStep ? "justify-end" : "justify-between"
-                } flex w-[90%] mx-auto`}
+                } flex w-[90%] md:w-full mx-auto`}
             >
                 {!istFirstStep && (
                     <button
                         onClick={handleBackRedirect}
-                        className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 rounded-md"
+                        className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 md:pl-0 rounded-md"
                     >
                         Go Back
                     </button>

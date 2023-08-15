@@ -21,11 +21,11 @@ const FourthStep = () => {
     };
 
     return (
-        <div className="absolute top-24 w-full">
-            <div>
-                <fieldset className="flex flex-col justify-between h-[84vh]">
-                    <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
-                        <legend className="font-bold text-xl mb-2">
+        <div className="absolute md:py-4 md:px-20 md:relative top-24 md:top-0">
+            <div className="md:w-[28rem]">
+                <fieldset className="flex flex-col justify-between h-[84vh] md:h-[33rem] ">
+                    <div className="w-[90%] md:w-full shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 md:px-0 py-7 text-left">
+                        <legend className="font-bold text-xl md:text-4xl mb-2">
                             Finishing up
                         </legend>
                         <p className="text-cool-gray text-base mb-6 max-w-[16rem]">
@@ -68,7 +68,7 @@ const FourthStep = () => {
                                 </div>
                             ) : null}
                         </div>
-                        <p className="flex mt-5 justify-between px-4">
+                        <p className="flex mt-5 justify-between">
                             <span className="text-sm text-cool-gray">
                               Total ({period === "yearly"
                                     ? "per year"
