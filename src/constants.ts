@@ -2,18 +2,22 @@ export const FORM_STEPS = [
     {
         label: "1",
         href: "/",
+        description: "your info"
     },
     {
         label: "2",
         href: "/second",
+        description: "select plan"
     },
     {
         label: "3",
         href: "/third",
+        description: "add-ons"
     },
     {
         label: "4",
         href: "/fourth",
+        description: "summary"
     },
 ];
 

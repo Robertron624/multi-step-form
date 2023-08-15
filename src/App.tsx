@@ -18,7 +18,7 @@ function App() {
             <AppProvider>
                 <Router>
                     <main>
-                        <div className="container md:max-w-[48.75rem] bg-white p-4 mx-auto relative md:flex md:justify-center md:h-[35.55rem]">
+                        <div className="container md:max-w-[56.75rem] bg-white rounded-md p-4 mx-auto relative md:flex md:justify-center md:h-[35.55rem]">
                             <StepsNumbers />
                             <Routes>
                                 <Route path="/" element={<FirstStep />} />

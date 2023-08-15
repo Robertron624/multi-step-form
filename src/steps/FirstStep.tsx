@@ -31,11 +31,11 @@ const FirstStep = () => {
     };
 
     return (
-        <div className="absolute md:relative top-24 md:top-0">
+        <div className="absolute md:py-4 md:px-16 md:relative top-24 md:top-0">
             <form className="md:h-full" onSubmit={handleSubmit(saveData)} action="" method="POST">
                 <fieldset className="flex flex-col justify-between md:justify-start h-[84vh] md:h-full md:bg-white">
                     <div className="w-[90%] md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
-                        <legend className="font-bold text-xl mb-2">
+                        <legend className="font-bold text-xl md:text-4xl mb-2">
                             Personal info
                         </legend>
                         <p className="text-cool-gray text-base mb-6">
@@ -45,12 +45,12 @@ const FirstStep = () => {
                         <div>
                             <label
                                 htmlFor="name"
-                                className="block text-xs font-medium text-marine-blue mb-2"
+                                className="block text-xs font-medium text-marine-blue mb-2 md:text-sm"
                             >
                                 Name
                             </label>
                             <input
-                                className="border w-full border-light-gray pl-4 rounded-sm"
+                                className="border w-full border-light-gray pl-4 md:py-2 rounded-sm"
                                 type="text"
                                 placeholder="e.g. Stephen King"
                                 id="name"
@@ -67,12 +67,12 @@ const FirstStep = () => {
                         <div className="mt-4">
                             <label
                                 htmlFor="email"
-                                className="block text-xs font-medium text-marine-blue mb-2"
+                                className="block text-xs font-medium text-marine-blue mb-2 md:text-sm"
                             >
                                 Email Address
                             </label>
                             <input
-                                className="border w-full border-light-gray pl-4 rounded-sm"
+                                className="border w-full border-light-gray pl-4 md:py-2 rounded-sm"
                                 type="email"
                                 id="email"
                                 placeholder="e.g. stephenking@lorem.com"
@@ -92,12 +92,12 @@ const FirstStep = () => {
                         <div className="mt-4">
                             <label
                                 htmlFor="phone"
-                                className="block text-xs font-medium text-marine-blue mb-2"
+                                className="block text-xs font-medium text-marine-blue mb-2 md:text-sm"
                             >
                                 Phone Number
                             </label>
                             <input
-                                className="border w-full border-light-gray pl-4 rounded-sm"
+                                className="border w-full border-light-gray pl-4 md:py-2 rounded-sm"
                                 type="tel"
                                 id="phone"
                                 placeholder="e.g. +1 234 567 890"
