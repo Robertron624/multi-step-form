@@ -2,6 +2,14 @@ import { FORM_STEPS } from "../constants";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAppState } from "../state";
 
+function submitFirstForm() {
+    const currentSubmitButton = document.querySelector(
+        "button[type=submit]"
+    ) as HTMLButtonElement;
+
+    currentSubmitButton.click();
+}
+
 const StepsNumbers = () => {
     type StepsMap = {
         [key: string]: string;
@@ -45,7 +53,7 @@ const StepsNumbers = () => {
         // Prevent user from navigate from first step to any steps without introducing personal info
 
         if (currentStep === "1" && !isAllPersonalInfoFilled) {
-            alert("Please fill in all personal info");
+            submitFirstForm();
             return;
         }
 
