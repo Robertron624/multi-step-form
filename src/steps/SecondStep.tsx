@@ -62,17 +62,17 @@ const SecondStep = () => {
     };
 
     return (
-        <div className="absolute top-24">
+        <div className="absolute md:py-4 md:px-16 md:relative top-24 md:top-0">
             <form onSubmit={handleSubmit} action="" method="POST">
                 <fieldset className="flex flex-col justify-between h-[84vh]">
-                    <div className="w-[90%] mb-6 shadow-lg mx-auto bg-white rounded-md px-4 py-7 text-left">
-                        <legend className="font-bold text-xl mb-2">
+                    <div className="w-[90%] md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
+                        <legend className="font-bold text-xl md:text-4xl mb-2">
                             Select your plan
                         </legend>
                         <p className="text-cool-gray text-base mb-6">
                             You have the option of monthly or yearly billing.
                         </p>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col md:flex-row gap-4">
                             {PLANS.map((plan) => {
                                 const {
                                     id,
@@ -87,7 +87,7 @@ const SecondStep = () => {
                                         onClick={handleSelectPlan}
                                         key={id}
                                         id={id}
-                                        className={`flex px-4 py-2 gap-3 border ${
+                                        className={`flex px-4 py-2 gap-3 md:flex-col border ${
                                             id === selectedPlan
                                                 ? "border-purplish-blue "
                                                 : "border-light-gray"
