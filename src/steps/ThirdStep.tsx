@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import { useAppState } from "../state";
 import { useNavigate } from "react-router-dom";
 import { ADDONS, Addon } from "../constants";
-import { useState } from "react";
+
+import "./ThirdStep.css";
 
 const ThirdStep = () => {
     const [state, setState] = useAppState();
@@ -13,10 +15,10 @@ const ThirdStep = () => {
 
     const navigate = useNavigate();
 
-    const handleSelectAddon = (
-        e: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        const addonId = e.target.id;
+    const handleSelectAddon = (e: 
+        React.MouseEvent<HTMLDivElement, MouseEvent>
+        ) => {
+        const addonId = e.currentTarget.id;
 
         // Check if the addon is already checked
         const isAddonOnList = selectedAddons.find(
@@ -37,7 +39,6 @@ const ThirdStep = () => {
     };
 
     const handleSubmit = () => {
-
         const data = {
             addons: selectedAddons,
         };
@@ -47,7 +48,6 @@ const ThirdStep = () => {
             ...data,
         });
         navigate("/fourth");
-
     };
 
     return (
@@ -77,14 +77,19 @@ const ThirdStep = () => {
                                                 : "border-light-gray"
                                         } rounded-md items-center`}
                                     >
-                                        <input
-                                            type="checkbox"
-                                            className="w-4 h-4"
+                                        <div
                                             id={id}
-                                            name={id}
-                                            checked={isAddonOnList}
-                                            onChange={handleSelectAddon}
-                                        />
+                                            className="checkbox-container"
+                                            onClick={handleSelectAddon}
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                className="w-4 h-4"
+                                                name={id}
+                                                checked={isAddonOnList}
+                                            />
+                                            <div className="checkmark"></div>
+                                        </div>
                                         <div className="flex justify-between w-11/12 items-center ">
                                             <div className="flex flex-col">
                                                 <label className="font-bold">

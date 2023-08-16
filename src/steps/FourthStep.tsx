@@ -28,7 +28,7 @@ const FourthStep = () => {
                         <legend className="font-bold text-xl md:text-4xl mb-2">
                             Finishing up
                         </legend>
-                        <p className="text-cool-gray text-base mb-6 max-w-[16rem]">
+                        <p className="text-cool-gray text-base mb-6 max-w-[16rem] md:max-w-none">
                             Double-check everything looks OK before committing.
                         </p>
                         <div className="bg-magnolia rounded-md px-4 py-5">

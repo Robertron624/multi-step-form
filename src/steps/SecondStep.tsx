@@ -119,7 +119,7 @@ const SecondStep = () => {
                                 );
                             })}
                         </div>
-                        <div className="period-switcher bg-magnolia rounded-md mt-4 md:mt-8 py-2 px-4 flex justify-center gap-3 md:gap-6 items-center">
+                        <div className="period-switcher bg-magnolia rounded-md mt-4 md:mt-8 py-2 px-4 flex justify-center gap-3 md:gap-6 items-center cursor-pointer">
                             <div
                                 id="monthly"
                                 onClick={handlePeriodChange}
@@ -129,7 +129,7 @@ const SecondStep = () => {
                             </div>
 
                             <div className="cl-toggle-switch flex">
-                                <label className="cl-switch">
+                                <label className="cl-switch cursor-pointer">
                                     <input
                                         onChange={handlePeriodChangeCheckbox}
                                         id="switcher"
@@ -143,7 +143,7 @@ const SecondStep = () => {
                             <div
                                 id="yearly"
                                 onClick={handlePeriodChange}
-                                className={` font-bold text-sm text-cool-gray`}
+                                className={` font-bold text-sm text-cool-gray cursor-pointer`}
                             >
                                 Yearly
                             </div>
