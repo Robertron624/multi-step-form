@@ -61,7 +61,7 @@ const StepsNumbers = () => {
     };
 
     return (
-        <div className="w-full md:max-w-[17rem] h-40 md:h-full bg-no-repeat bg-steps-pattern-mobile md:bg-steps-pattern-desktop md:rounded-md">
+        <div className="w-full md:max-w-[17rem] h-40 md:h-full bg-no-repeat bg-steps-pattern-mobile md:bg-steps-pattern-desktop bg-cover md:rounded-md">
             <div className="flex md:flex-col gap-5 md:gap-8 max-w-[12rem] md:max-w-none items-center mx-auto py-8 ">
                 {FORM_STEPS.map((stepNumber) => (
                     <div className="md:flex items-center md:w-40 gap-3" key={stepNumber.label}>

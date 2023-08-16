@@ -43,7 +43,7 @@
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkbox-container .checkmark:after {
+.checkbox-container .checkmark::after {
     content: "";
     background-image: url(/icon-checkmark.svg);
     background-repeat: no-repeat;
@@ -52,12 +52,12 @@
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked ~ .checkmark::after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
+.checkbox-container .checkmark::after {
     left: 4px;
     top: 5px;
     width: 10px;
