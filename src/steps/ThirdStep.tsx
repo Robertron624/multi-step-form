@@ -71,7 +71,7 @@ const ThirdStep = () => {
                                 return (
                                     <div
                                         key={id}
-                                        className={`flex px-4 md:w-[25rem] py-2 gap-3 border ${
+                                        className={`flex px-4 md:w-[25rem] py-2 md:py-4 cursor-pointer hover:border-purplish-blue transition-all duration-200 gap-3 border ${
                                             isAddonOnList
                                                 ? "border-purplish-blue bg-magnolia"
                                                 : "border-light-gray"

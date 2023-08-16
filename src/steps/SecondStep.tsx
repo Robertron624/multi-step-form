@@ -65,7 +65,7 @@ const SecondStep = () => {
         <div className="absolute md:py-4 md:px-20 md:relative top-24 md:top-0">
             <form onSubmit={handleSubmit} action="" method="POST">
                 <fieldset className="flex flex-col justify-between h-[84vh] md:h-[75vh]">
-                    <div className="w-[90%] md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
+                    <div className="w-[90%] mb-8 md:mb-0 md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
                         <legend className="font-bold text-xl md:text-4xl mb-2">
                             Select your plan
                         </legend>
@@ -92,7 +92,7 @@ const SecondStep = () => {
                                             id === selectedPlan
                                                 ? "border-purplish-blue bg-magnolia"
                                                 : "border-light-gray"
-                                        } rounded-md items-center md:w-32 md:h-36`}
+                                        } rounded-md items-center md:w-32 md:h-36 hover:border-purplish-blue transition-all duration-200`}
                                     >
                                         <img src={iconUrl} alt={`${id} icon`} />
                                         <div>

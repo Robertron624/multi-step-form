@@ -45,7 +45,7 @@ const FirstStep = () => {
                         <div>
                             <label
                                 htmlFor="name"
-                                className="block md:flex md:justify-between text-xs font-medium text-marine-blue mb-2 md:text-sm"
+                                className="flex items-center justify-between text-xs font-medium text-marine-blue mb-2 md:text-sm"
                             >
                                 Name
                                 {errors.name && (
@@ -67,7 +67,7 @@ const FirstStep = () => {
                         <div className="mt-4">
                             <label
                                 htmlFor="email"
-                                className="block md:flex md:justify-between text-xs font-medium text-marine-blue mb-2 md:text-sm"
+                                className="flex items-center justify-between text-xs font-medium text-marine-blue mb-2 md:text-sm"
                             >
                                 Email Address
                                 {errors.email && (
@@ -92,7 +92,7 @@ const FirstStep = () => {
                         <div className="mt-4">
                             <label
                                 htmlFor="phone"
-                                className="block md:flex md:justify-between text-xs font-medium text-marine-blue mb-2 md:text-sm"
+                                className="flex items-center justify-between text-xs font-medium text-marine-blue mb-2 md:text-sm"
                             >
                                 Phone Number
                                 {errors.phone && (

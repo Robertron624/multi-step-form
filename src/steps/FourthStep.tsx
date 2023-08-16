@@ -39,7 +39,7 @@ const FourthStep = () => {
                                     </span>
                                     <button
                                         onClick={handleChangePlan}
-                                        className="text-cool-gray underline text-sm"
+                                        className="text-cool-gray underline text-sm text-left hover:text-purplish-blue transition-all duration-200"
                                     >
                                         Change
                                     </button>

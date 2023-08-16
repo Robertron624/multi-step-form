@@ -42,14 +42,14 @@ const Footer = () => {
                 {!istFirstStep && (
                     <button
                         onClick={handleBackRedirect}
-                        className="bg-transparent text-cool-gray text-sm font-bold py-2 px-4 md:pl-0 rounded-md"
+                        className="hover:text-marine-blue transition-all duration-200 bg-transparent text-cool-gray text-sm font-bold py-2 px-4 md:pl-0 rounded-md"
                     >
                         Go Back
                     </button>
                 )}
 
                 {isLastStep ? (
-                    <a href="/fifth" className="bg-purplish-blue text-alabaster font-bold py-2 px-4 rounded-md">
+                    <a href="/fifth" className="bg-purplish-blue text-alabaster font-bold py-2 px-4 rounded-md hover:opacity-70 transition-all duration-200">
                         Confirm
                     </a>
                 ) : (
