@@ -24,7 +24,7 @@ const FourthStep = () => {
         <div className="absolute w-full md:py-4 md:px-20 md:relative top-24 md:top-0">
             <div className="md:w-[28rem]">
                 <fieldset className="flex flex-col justify-between h-[84vh] md:h-[33rem] ">
-                    <div className="w-[90%] mb-8 md:mb-0 md:w-full shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 md:px-0 py-7 text-left">
+                    <div className="w-[90%] mb-8 md:mb-16 md:w-full shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 md:px-0 py-7 text-left">
                         <legend className="font-bold text-xl md:text-4xl mb-2">
                             Finishing up
                         </legend>

@@ -34,7 +34,7 @@ const FirstStep = () => {
         <div className="absolute md:py-4 md:px-16 md:relative top-24 md:top-0">
             <form className="md:h-full" id="personal-info" onSubmit={handleSubmit(saveData)} action="" method="POST">
                 <fieldset className="flex flex-col justify-between md:justify-start h-[84vh] md:h-full md:bg-white">
-                    <div className="w-[90%] mb-8 md:mb-0 md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
+                    <div className="w-[90%] mb-8 md:mb-16 md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md px-4 py-7 text-left">
                         <legend className="font-bold text-xl md:text-4xl mb-2">
                             Personal info
                         </legend>

@@ -54,7 +54,7 @@ const ThirdStep = () => {
         <div className="absolute md:py-4 md:px-28 md:relative top-24 md:top-0">
             <form onSubmit={handleSubmit} action="" method="POST">
                 <fieldset className="flex flex-col justify-between h-[84vh] md:h-[75vh]">
-                    <div className="w-[90%] mb-8 md:mb-0 md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md md:px-0 px-4 py-7 text-left">
+                    <div className="w-[90%] mb-8 md:mb-20 md:w-auto shadow-lg md:shadow-none mx-auto bg-white rounded-md md:px-0 px-4 py-7 text-left">
                         <legend className="font-bold text-xl md:text-4xl mb-2">
                             Pick add-ons
                         </legend>
